@@ -1,7 +1,10 @@
 streamlit
-azure-ai-formrecognizer
 openai
-langchain
-requests
-python-dotenv
 pandas
+python-dotenv
+azure-core
+azure-ai-formrecognizer
+azure-storage-blob
+requests
+tiktoken
+langchain
