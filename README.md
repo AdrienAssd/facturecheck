@@ -27,6 +27,10 @@ Elle permet de vérifier automatiquement des factures stockées sur Azure, et de
 
 ---
 
+## Lancer l'application depuis streamlit
+
+https://facturecheck.streamlit.app
+
 ## ⚙️ Comment lancer l’application localement
 
 ### 1. Clone le projet
@@ -50,6 +54,7 @@ AZURE_STORAGE_ACCOUNT=...
 AZURE_STORAGE_KEY=...
 AZURE_STORAGE_CONTAINER=factures
 
+## modifier dans le fichier app.py les paramètres de configuration depuis les variables
 ## 3. Installer les dépendances nécessaires 
 
 pip install streamlit
