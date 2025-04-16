@@ -1,12 +1,6 @@
-import os
 import json
 import streamlit as st
-from dotenv import load_dotenv
 from openai import AzureOpenAI
-
-# Charger les variables d'environnement depuis le fichier .env
-load_dotenv()
-
 
 # Fonction principale
 def main():
@@ -19,13 +13,13 @@ def main():
     if st.button('Soumettre'):
         if text:
             try:
-                # Paramètres de configuration depuis les variables d'environnement
-                azure_oai_endpoint = os.getenv("AZURE_OAI_ENDPOINT")
-                azure_oai_key = os.getenv("AZURE_OAI_KEY")
-                azure_oai_deployment = os.getenv("AZURE_OAI_DEPLOYMENT")
-                azure_search_endpoint = os.getenv("AZURE_SEARCH_ENDPOINT")
-                azure_search_key = os.getenv("AZURE_SEARCH_KEY")
-                azure_search_index = os.getenv("AZURE_SEARCH_INDEX")
+                # Paramètres de configuration depuis Streamlit secrets
+                azure_oai_endpoint = st.secrets["AZURE_OAI_ENDPOINT"]
+                azure_oai_key = st.secrets["AZURE_OAI_KEY"]
+                azure_oai_deployment = st.secrets["AZURE_OAI_DEPLOYMENT"]
+                azure_search_endpoint = st.secrets["AZURE_SEARCH_ENDPOINT"]
+                azure_search_key = st.secrets["AZURE_SEARCH_KEY"]
+                azure_search_index = st.secrets["AZURE_SEARCH_INDEX"]
 
                 # Initialisation du client Azure OpenAI
                 client = AzureOpenAI(
@@ -78,3 +72,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
